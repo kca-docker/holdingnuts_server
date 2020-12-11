@@ -1,0 +1,16 @@
+auth_password  
+conarchive_expire  1800
+flood_chat_interval  10
+flood_chat_mute  60
+flood_chat_per_interval  5
+log  true
+log_timestamp  true
+max_clients  200
+max_connections_per_ip  3
+max_create_per_player  2
+max_games  100
+max_register_per_player  2
+perm_create_user  true
+port  40888
+version  5
+welcome_message  "Welcome"
