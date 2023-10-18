@@ -21,19 +21,19 @@ In order to run this container you'll need docker installed.
 The image could be started by the following command.  
 
 ```shell
-docker run -d briezh/holdingnuts_server
+docker run -d bksolutions/holdingnuts_server
 ```
 
 By default the container uses the TCP port 40888 for the HoldingNuts server. 
 
 ```shell
-docker run -d -p <port>:40888 briezh/holdingnuts_server
+docker run -d -p <port>:40888 bksolutions/holdingnuts_server
 ```
 
 The HoldingNuts server configuration is stored at `/root/.holdingnuts/server.cfg`.
 
 ```shell
-docker run -d -v <path>:/root/.holdingnuts:ro briezh/holdingnuts_server
+docker run -d -v <path>:/root/.holdingnuts:ro bksolutions/holdingnuts_server
 ```
 
 #### Environment Variables
@@ -62,7 +62,7 @@ $ podman create --name <container_name> \
  -p [host]:8080 \
  -v [host]:/opt/picapport:Z \
  -l "io.containers.autoupdate=image" \
- -t briezh/holdingnuts_server:latest
+ -t bksolutions/holdingnuts_server:latest
 
 $ podman generate systemd --new --name <container_name> --files
 $ mv *.service /usr/lib/systemd/
@@ -87,7 +87,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Briezh Khenloo** - *Initial work* - [B.Khenloo](https://github.com/BKhenloo)
+* **Briezh Khenloo** - *Initial work* - [B.Khenloo](https://github.com/KruseCarsten)
 
 See also the list of [contributors](https://github.com/BKhenloo/holdingnuts_server/contributors) who 
 participated in this project.

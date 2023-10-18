@@ -1,0 +1,14 @@
+---
+kind: pipeline
+type: docker
+name: container-image-holdingnuts
+
+steps:
+- name: build-amd64
+  image: plugins/docker
+  pull: if-not-exists
+  settings:
+    repo: bksolutions/holdingnuts
+    tags:
+      - 'latest'
+      - '0.0.5'
