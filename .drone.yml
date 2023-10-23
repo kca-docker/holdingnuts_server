@@ -5,9 +5,10 @@ name: container-image-holdingnuts
 
 steps:
 - name: build-amd64
-  image: plugins/docker
+  image: woodpeckerci/plugin-docker-buildx
   pull: if-not-exists
   settings:
+    dry_run: true
     repo: bksolutions/holdingnuts
     tags:
       - 'latest'
