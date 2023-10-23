@@ -1,6 +1,6 @@
 ---
 steps:
-  build-amd64
+  build-amd64:
     image: woodpeckerci/plugin-docker-buildx
     pull: if-not-exists
     settings:
