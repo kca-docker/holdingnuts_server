@@ -1,15 +1,11 @@
 ---
-kind: pipeline
-type: docker
-name: container-image-holdingnuts
-
 steps:
-- name: build-amd64
-  image: woodpeckerci/plugin-docker-buildx
-  pull: if-not-exists
-  settings:
-    dry_run: true
-    repo: bksolutions/holdingnuts
-    tags:
-      - 'latest'
-      - '0.0.5'
+  build-amd64
+    image: woodpeckerci/plugin-docker-buildx
+    pull: if-not-exists
+    settings:
+      dry_run: true
+      repo: bksolutions/holdingnuts
+      tags:
+        - 'latest'
+        - '0.0.5'
