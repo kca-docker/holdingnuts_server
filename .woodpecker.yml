@@ -9,7 +9,6 @@ variables:
 steps:      
   publish:
     image: woodpeckerci/plugin-docker-buildx
-    pull: if-not-exists
     settings:
       dockerfile: *file
       platforms: *arch
