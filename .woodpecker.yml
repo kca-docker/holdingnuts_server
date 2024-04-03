@@ -30,14 +30,19 @@ steps:
   update_doc:
     image: peterevans/dockerhub-description:3
     environment:
-      - README_FILEPATH='README.md'
-    settings:
-      registry: *dhub
-      logins:
-        - registry: *dhub
-          username:
-            from_secret: DOCKER_BKSOL_USER
-          password:
-            from_secret: DOCKER_BKSOL_PASS
+      DOCKERHUB_USERNAME:
+        from_secret: DOCKER_BKSOL_USER
+      DOCKERHUB_PASSWORD: 
+        from_secret: DOCKER_BKSOL_PASS
+      DOCKERHUB_REPOSITORY: *repo
+      README_FILEPATH: README.md
+#    settings:
+#      registry: *dhub
+#      logins:
+#        - registry: *dhub
+#          username:
+#            from_secret: DOCKER_BKSOL_USER
+#          password:
+#            from_secret: DOCKER_BKSOL_PASS
       when:
         branch: main
