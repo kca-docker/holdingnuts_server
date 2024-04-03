@@ -1,11 +1,9 @@
-# Holdingnuts Server <!-- onit in toc -->
+# Holdingnuts Server <!-- omit in toc -->
 
 HoldingNuts is an open source multi-platform poker server to play the popular Texas Hold'em variant on your own network.
 
-# Content <!-- onit in toc -->
+# Content <!-- omit in toc -->
 
-- [Holdingnuts Server ](#holdingnuts-server-)
-- [Content ](#content-)
 - [Getting Started](#getting-started)
   - [Prerequisities](#prerequisities)
   - [Usage](#usage)
