@@ -36,13 +36,13 @@ steps:
         from_secret: DOCKER_BKSOL_PASS
       DOCKERHUB_REPOSITORY: *repo
       README_FILEPATH: README.md
-#    settings:
-#      registry: *dhub
-#      logins:
-#        - registry: *dhub
-#          username:
-#            from_secret: DOCKER_BKSOL_USER
-#          password:
-#            from_secret: DOCKER_BKSOL_PASS
+    settings:
+      registry: *dhub
+      logins:
+        - registry: *dhub
+          username:
+            from_secret: DOCKER_BKSOL_USER
+          password:
+            from_secret: DOCKER_BKSOL_PASS
       when:
         branch: main
