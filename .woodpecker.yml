@@ -32,11 +32,11 @@ steps:
       branch: main
     image: peterevans/dockerhub-description:3
     environment:
-      DOCKERHUB_USERNAME:
+    - DOCKERHUB_USERNAME:
         from_secret: DOCKER_BKSOL_USER
-      DOCKERHUB_PASSWORD: 
+    - DOCKERHUB_PASSWORD: 
         from_secret: DOCKER_BKSOL_PASS
-      DOCKERHUB_REPOSITORY: *repo
+    - DOCKERHUB_REPOSITORY: *repo
       README_FILEPATH: ${CI_WORKSPACE}/README.md
 #    settings:
 #      registry: *dhub
