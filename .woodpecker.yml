@@ -9,7 +9,8 @@ variables:
 steps:      
 #  publish:
 #    when:
-#      branch: main
+#      - event: push
+#        branch: main
 #    image: woodpeckerci/plugin-docker-buildx
 #    settings:
 #      dockerfile: *file
@@ -35,7 +36,8 @@ steps:
 
   update_doc:
     when:
-      branch: main
+      - event: push
+        branch: main
     image: peterevans/dockerhub-description:3
     environment:
       DOCKERHUB_USERNAME:
