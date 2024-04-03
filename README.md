@@ -43,19 +43,19 @@ In order to run this container you'll need docker installed.
 The image could be started by the following command.  
 
 ```shell
-docker run -d bksolutions/holdingnuts_server
+docker run -d bksolutions/holdingnuts
 ```
 
 By default the container uses the TCP port 40888 for the HoldingNuts server. 
 
 ```shell
-docker run -d -p <port>:40888 bksolutions/holdingnuts_server
+docker run -d -p <port>:40888 bksolutions/holdingnuts
 ```
 
 The HoldingNuts server configuration is stored at `/root/.holdingnuts/server.cfg`.
 
 ```shell
-docker run -d -v <path>:/root/.holdingnuts:ro bksolutions/holdingnuts_server
+docker run -d -v <path>:/root/.holdingnuts:ro bksolutions/holdingnuts
 ```
 
 ### Environment Variables
@@ -84,7 +84,7 @@ $ podman create --name <container_name> \
  -p [host]:8080 \
  -v [host]:/opt/picapport:Z \
  -l "io.containers.autoupdate=registry" \
- -t bksolutions/holdingnuts_server:latest
+ -t bksolutions/holdingnuts:latest
 
 $ podman generate systemd --new --name <container_name> --files
 $ mv *.service /usr/lib/systemd/
