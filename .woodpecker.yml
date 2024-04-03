@@ -27,15 +27,10 @@ steps:
 #          password:
 #            from_secret: DOCKER_BKSOL_PASS
 
-#  test:
-#    image: alpine
-#    environment:
-#      APARAM1: 'Parameter 1'
-#      APARAM2:
-#        from_secret: DOCKER_BKSOL_USER
-#    commands:
-#      - echo $$APARAM1
-#      - echo $$APARAM2
+  verify:
+    image: alpine
+    commands:
+      - ls -la
 
   update_doc:
     when:
