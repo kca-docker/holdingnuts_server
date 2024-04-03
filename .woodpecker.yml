@@ -7,25 +7,25 @@ variables:
 
 
 steps:      
-  publish:
-    image: woodpeckerci/plugin-docker-buildx
-    settings:
-      dockerfile: *file
-      platforms: *arch
-      dry_run: false
-      repo: *repo
-      tags: 
-        - 'latest'
-        - '0.0.5'
-      registry: *dhub
-      logins:
-        - registry: *dhub
-          username:
-            from_secret: DOCKER_BKSOL_USER
-          password:
-            from_secret: DOCKER_BKSOL_PASS
-      when:
-        branch: main
+#  publish:
+#    image: woodpeckerci/plugin-docker-buildx
+#    settings:
+#      dockerfile: *file
+#      platforms: *arch
+#      dry_run: false
+#      repo: *repo
+#      tags: 
+#        - 'latest'
+#        - '0.0.5'
+#      registry: *dhub
+#      logins:
+#        - registry: *dhub
+#          username:
+#            from_secret: DOCKER_BKSOL_USER
+#          password:
+#            from_secret: DOCKER_BKSOL_PASS
+#      when:
+#        branch: main
 
   update_doc:
     image: pushrm
