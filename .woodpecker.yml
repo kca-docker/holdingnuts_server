@@ -24,8 +24,8 @@ steps:
             from_secret: DOCKER_BKSOL_USER
           password:
             from_secret: DOCKER_BKSOL_PASS
-    when:
-      branch: main
+      when:
+        branch: main
 
     update_doc:
       image: pushrm
@@ -36,5 +36,5 @@ steps:
             from_secret: DOCKER_BKSOL_USER
           password:
             from_secret: DOCKER_BKSOL_PASS
-    when:
-      branch: test
+      when:
+        branch: test
