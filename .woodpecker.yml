@@ -26,3 +26,15 @@ steps:
             from_secret: DOCKER_BKSOL_PASS
     when:
       branch: main
+
+    update_doc:
+      image: pushrm
+      registry: *dhub
+      logins:
+        - registry: *dhub
+          username:
+            from_secret: DOCKER_BKSOL_USER
+          password:
+            from_secret: DOCKER_BKSOL_PASS
+    when:
+      branch: test
