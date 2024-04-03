@@ -35,7 +35,7 @@ steps:
         from_secret: DOCKER_BKSOL_USER
     commands:
       - echo $$APARAM1
-      - echo $$APARAM1
+      - echo $$APARAM2
 
 #  update_doc:
 #    when:
