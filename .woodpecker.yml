@@ -28,7 +28,9 @@ steps:
 #        branch: main
 
   update_doc:
-    image: pushrm
+    image: peterevans/dockerhub-description:3
+    environment:
+      - README_FILEPATH='README.md'
     settings:
       registry: *dhub
       logins:
