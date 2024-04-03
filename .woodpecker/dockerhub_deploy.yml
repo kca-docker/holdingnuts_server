@@ -8,7 +8,7 @@ variables:
 steps:
   build_n_push:
     when:
-      - event: push
+      - event: [push, deployment, cron, manual]
         branch: main
     image: woodpeckerci/plugin-docker-buildx
     settings:
