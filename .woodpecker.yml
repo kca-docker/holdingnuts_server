@@ -32,7 +32,7 @@ steps:
     image: alpine
     commands:
       - ls -la
-      - cat ${CI_WORKSPACE}/README.md
+      - cat README.md
 
   update_doc:
     when:
@@ -45,4 +45,4 @@ steps:
       DOCKERHUB_PASSWORD: 
         from_secret: DOCKER_BKSOL_PASS
       DOCKERHUB_REPOSITORY: *repo
-      README_FILEPATH: ${CI_WORKSPACE}/README.md
+      README_FILEPATH: README.md
