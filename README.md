@@ -1,12 +1,34 @@
-# Holdingnuts Server
+# Holdingnuts Server <!-- onit in toc -->
 
 HoldingNuts is an open source multi-platform poker server to play the popular Texas Hold'em variant on your own network.
 
-## Getting Started
+# Content <!-- onit in toc -->
+
+- [Holdingnuts Server ](#holdingnuts-server-)
+- [Content ](#content-)
+- [Getting Started](#getting-started)
+  - [Prerequisities](#prerequisities)
+  - [Usage](#usage)
+    - [Container Parameters](#container-parameters)
+    - [Environment Variables](#environment-variables)
+    - [Volumes](#volumes)
+    - [Useful File Locations](#useful-file-locations)
+  - [Using Podman instead of Docker](#using-podman-instead-of-docker)
+  - [Compose-File](#compose-file)
+    - [Docker compose](#docker-compose)
+    - [Podman compose](#podman-compose)
+- [Find Us](#find-us)
+- [Contributing](#contributing)
+- [Versioning](#versioning)
+- [Authors](#authors)
+- [License](#license)
+
+
+# Getting Started
 
 These instructions will cover usage information and for the docker container 
 
-### Prerequisities
+## Prerequisities
 
 In order to run this container you'll need docker installed.
 
@@ -14,9 +36,9 @@ In order to run this container you'll need docker installed.
 * [OS X](https://docs.docker.com/mac/started/)
 * [Linux](https://docs.docker.com/linux/started/)
 
-### Usage
+## Usage
 
-#### Container Parameters
+### Container Parameters
 
 The image could be started by the following command.  
 
@@ -36,19 +58,19 @@ The HoldingNuts server configuration is stored at `/root/.holdingnuts/server.cfg
 docker run -d -v <path>:/root/.holdingnuts:ro bksolutions/holdingnuts_server
 ```
 
-#### Environment Variables
+### Environment Variables
 
 * `PORT` - The HoldingNuts server uses port 40888 tcp in the standard configuration.
 
-#### Volumes
+### Volumes
 
 * `/root/.holdingnuts` - Configuration folder
 
-#### Useful File Locations
+### Useful File Locations
 
 * `/root/.holdingnuts/server.cfg` - HoldingNuts Server configuration file
 
-### Using Podman instead of Docker
+## Using Podman instead of Docker
 
 If using `podman` Version >=1.9 instead of `docker` it should be possible to use the `auto-update` feature with `systemd`.
 
@@ -61,7 +83,7 @@ Then the systemd daemon must reload the service files.
 $ podman create --name <container_name> \
  -p [host]:8080 \
  -v [host]:/opt/picapport:Z \
- -l "io.containers.autoupdate=image" \
+ -l "io.containers.autoupdate=registry" \
  -t bksolutions/holdingnuts_server:latest
 
 $ podman generate systemd --new --name <container_name> --files
@@ -72,28 +94,59 @@ $ systemctl daemon-reload
 $ systemctl start <service> --now
 ```
 
-## Find Us
+## Compose-File
 
-* [GitHub](https://github.com/BKhenloo/holdingnuts_server)
+### Docker compose
 
-## Contributing
+```yaml
+version: "3.8"
+services:
+  holdingnuts:
+    container_name: holdingnuts
+    image: docker.io/bksolutions/holdingnuts:latest
+    environment:
+      - TZ=Europe/Berlin
+    volumes:
+      - ${PWD}/hn.conf.d:/root/.holdingnuts:Z
+```
+
+### Podman compose
+
+```yaml
+version: "3.8"
+services:
+  holdingnuts:
+    container_name: holdingnuts
+    image: docker.io/bksolutions/holdingnuts:latest
+    environment:
+      - TZ=Europe/Berlin
+    volumes:
+      - ${PWD}/hn.conf.d:/root/.holdingnuts:Z
+    labels:
+      - "PODMAN_SYSTEMD_UNIT=podman-compose@container-holdingnuts.service"
+      - "io.containers.autoupdate=registry"
+```
+
+# Find Us
+
+* [GitHub](https://github.com/kca-docker/holdingnuts_server)
+
+# Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
+# Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the 
-[tags on this repository](https://github.com/BKhenloo/holdingnuts_server/tags). 
+[tags on this repository](https://github.com/kca-docker/holdingnuts_server/tags). 
 
-## Authors
+# Authors
 
-* **Briezh Khenloo** - *Initial work* - [B.Khenloo](https://github.com/KruseCarsten)
+* **Briezh Khenloo** - *Project* - [B.Khenloo](https://github.com/KruseCarsten)
 
-See also the list of [contributors](https://github.com/BKhenloo/holdingnuts_server/contributors) who 
+See also the list of [contributors](https://github.com/kca-docker/holdingnuts_server/contributors) who 
 participated in this project.
 
-## License
+# License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Acknowledgments
