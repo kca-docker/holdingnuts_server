@@ -27,8 +27,9 @@ steps:
       when:
         branch: main
 
-    update_doc:
-      image: pushrm
+  update_doc:
+    image: pushrm
+    settings:
       registry: *dhub
       logins:
         - registry: *dhub
@@ -37,4 +38,4 @@ steps:
           password:
             from_secret: DOCKER_BKSOL_PASS
       when:
-        branch: test
+        branch: main
