@@ -1,3 +1,11 @@
+[![Docker Image Size](https://badgen.net/docker/size/bksolutions/holdingnuts?icon=docker&label=image%20size)](https://hub.docker.com/r/bksolutions/holdingnuts/)
+[![Docker Pulls](https://badgen.net/docker/pulls/bksolutions/holdingnuts?icon=docker&label=pulls)](https://hub.docker.com/r/bksolutions/holdingnuts/)
+[![Docker Stars](https://badgen.net/docker/stars/bksolutions/holdingnuts?icon=docker&label=stars)](https://hub.docker.com/r/bksolutions/holdingnuts/)
+![Github stars](https://badgen.net/github/stars/kca-docker/holdingnuts_server?icon=github&label=stars)
+![Github forks](https://badgen.net/github/forks/kca-docker/holdingnuts_server?icon=github&label=forks)
+![Github issues](https://img.shields.io/github/issues/kca-docker/holdingnuts_server)
+![Github last-commit](https://img.shields.io/github/last-commit/kca-docker/holdingnuts_server)
+
 # Holdingnuts Server <!-- omit in toc -->
 
 HoldingNuts is an open source multi-platform poker server to play the popular Texas Hold'em variant on your own network.
