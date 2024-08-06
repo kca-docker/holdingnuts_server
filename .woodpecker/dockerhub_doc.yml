@@ -7,9 +7,9 @@ steps:
   update_doc:
     when:
       - path:
-          include: *file
-      - event: [push, deployment]
-        branch: main
+          include: [*.md]
+      - branch: Main
+        event: [push, deployment]
     image: peterevans/dockerhub-description:3
     environment:
       DOCKERHUB_USERNAME:
