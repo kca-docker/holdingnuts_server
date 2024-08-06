@@ -6,7 +6,7 @@ variables:
 steps:
   update_doc:
     when:
-      - event: [push, deployment, manual]
+      - event: [push, deployment]
         branch: main
     image: peterevans/dockerhub-description:3
     environment:
