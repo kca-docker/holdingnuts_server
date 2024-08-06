@@ -6,6 +6,8 @@ variables:
 steps:
   update_doc:
     when:
+      - path:
+          include: *file
       - event: [push, deployment]
         branch: main
     image: peterevans/dockerhub-description:3
