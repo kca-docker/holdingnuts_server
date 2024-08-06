@@ -8,8 +8,7 @@ steps:
     when:
       - path:
           include: ['*.md']
-      - branch: Main
-        event: [push, deployment]
+      - event: [push, deployment]
     image: peterevans/dockerhub-description:3
     environment:
       DOCKERHUB_USERNAME:
