@@ -8,7 +8,11 @@ variables:
 steps:
   build_n_push:
     when:
-      - event: [push, deployment, cron, manual]
+      - event: [push]
+        branch: main
+        path:
+          include: ['Dockerfile', 'HoldingnutsServerCfg', '.woodpecker/dockerhub_deploy.yml']
+      - event: [cron, manual]
         branch: main
     image: woodpeckerci/plugin-docker-buildx
     settings:

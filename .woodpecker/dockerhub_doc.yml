@@ -6,7 +6,7 @@ variables:
 steps:
   update_doc:
     when:
-      branch: main
+      event: [push]
     image: peterevans/dockerhub-description:3
     environment:
       DOCKERHUB_USERNAME:
