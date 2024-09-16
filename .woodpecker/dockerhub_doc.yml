@@ -4,10 +4,16 @@ variables:
   - &repo bksolutions/holdingnuts
 
 steps:
+  lint_doc:
+    when:
+      - event: push
+        path:
+          include: ['*.md']
+    image: woodpeckerci/plugin-prettier:next
+
   update_doc:
     when:
-      - branch: main
-        event: [push, deployment]
+      - event: [push]
         path:
           include: ['*.md']
     image: peterevans/dockerhub-description:3
