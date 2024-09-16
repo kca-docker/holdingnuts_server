@@ -32,7 +32,7 @@ HoldingNuts is an open source multi-platform poker server to play the popular Te
 
 # Getting Started
 
-These instructions will cover usage information and for the docker container 
+These instructions will cover usage information and for running the docker container.
 
 ## Prerequisities
 
