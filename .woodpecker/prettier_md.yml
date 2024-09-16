@@ -1,0 +1,8 @@
+---
+steps:
+  lint_doc:
+    when:
+        event: push
+        path:
+          include: ['*.md', '.woodpecker/dockerhub_doc.yml']
+    image: woodpeckerci/plugin-prettier:next --write

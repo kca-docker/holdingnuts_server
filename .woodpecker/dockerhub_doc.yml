@@ -4,18 +4,9 @@ variables:
   - &repo bksolutions/holdingnuts
 
 steps:
-  lint_doc:
-    when:
-      - event: push
-        path:
-          include: ['*.md', '.woodpecker/dockerhub_doc.yml']
-    image: woodpeckerci/plugin-prettier:next --write --parser=markdown README.md
-
   update_doc:
     when:
-      - event: push
-        path:
-          include: ['*.md', '.woodpecker/dockerhub_doc.yml']
+      branch: main
     image: peterevans/dockerhub-description:3
     environment:
       DOCKERHUB_USERNAME:
@@ -24,3 +15,6 @@ steps:
         from_secret: DOCKER_BKSOL_PASS
       DOCKERHUB_REPOSITORY: *repo
       README_FILEPATH: *file
+
+depends_on:
+  - woodpeckerci/plugin-prettier:next
