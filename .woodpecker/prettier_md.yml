@@ -4,5 +4,6 @@ steps:
     when:
       event: [push]
       path:
-        include: ['*.md', '.woodpecker/dockerhub_doc.yml']
+        include: ['*.TEST']
+      #  include: ['*.md', '.woodpecker/prettier_md.yml', '.woodpecker/dockerhub_doc.yml']
     image: woodpeckerci/plugin-prettier:next --check

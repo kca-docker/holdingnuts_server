@@ -7,6 +7,8 @@ steps:
   update_doc:
     when:
       event: [push]
+      path:
+        include: ['*.md', '.woodpecker/dockerhub_doc.yml']
     image: peterevans/dockerhub-description:3
     environment:
       DOCKERHUB_USERNAME:
@@ -16,5 +18,5 @@ steps:
       DOCKERHUB_REPOSITORY: *repo
       README_FILEPATH: *file
 
-depends_on:
-  - woodpeckerci/plugin-prettier:next
+#depends_on:
+#  - woodpeckerci/plugin-prettier:next
