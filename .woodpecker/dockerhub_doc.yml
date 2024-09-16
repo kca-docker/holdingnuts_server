@@ -9,7 +9,7 @@ steps:
       - event: push
         path:
           include: ['*.md', '.woodpecker/dockerhub_doc.yml']
-    image: woodpeckerci/plugin-prettier:next
+    image: woodpeckerci/plugin-prettier:next --write --parser=markdown README.md
 
   update_doc:
     when:
