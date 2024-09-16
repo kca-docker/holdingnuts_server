@@ -8,14 +8,14 @@ steps:
     when:
       - event: push
         path:
-          include: ['*.md']
+          include: ['*.md', '.woodpecker/dockerhub_doc.yml']
     image: woodpeckerci/plugin-prettier:next
 
   update_doc:
     when:
-      - event: [push]
+      - event: push
         path:
-          include: ['*.md']
+          include: ['*.md', '.woodpecker/dockerhub_doc.yml']
     image: peterevans/dockerhub-description:3
     environment:
       DOCKERHUB_USERNAME:
