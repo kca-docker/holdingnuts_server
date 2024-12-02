@@ -15,6 +15,7 @@ steps:
       - event: [cron, manual]
         branch: main
     image: woodpeckerci/plugin-docker-buildx
+    privileged: true
     settings:
       dockerfile: *file
       platforms: *arch
