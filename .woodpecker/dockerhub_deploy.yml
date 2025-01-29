@@ -23,6 +23,10 @@ steps:
       tags: 
         - 'latest'
         - '0.0.5'
+      build_args:
+        - VERSION="0.0.5"
+        - CREATED="${CI_PIPELINE_STARTED}"
+        - REVISION="${CI_COMMIT_SHA}"
       registry: *dhub
       logins:
         - registry: *dhub
